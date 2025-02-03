@@ -8,6 +8,7 @@ export const CartContext = createContext({
 
 export default function CartProvider({children}){
     const [CartCount, setCartCout] = useState(0)
+    
     return (
         <CartContext.Provider value={{CartCount, setCartCout}}>
             {children}
