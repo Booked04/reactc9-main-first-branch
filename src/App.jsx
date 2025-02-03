@@ -1,24 +1,18 @@
 import React from 'react'
-import Heading from './components/Heading'
-import Card from './components/Card'
-import Counter from './pages/Counter'
+import { Route, Routes } from 'react-router'
 import GithubSearch from './pages/GithubSearch'
-import ProductList from './components/ProductList'
-import CartButton from './components/CartButton'
-import CartProvider from './components/CartContext'
+import Counter from './pages/Counter'
+import Products from './pages/Products'
+import { BrowserRouter } from 'react-router-dom'
+
 
 export default function App() {
   return (
-    <div>
-    <CartProvider>
-     <CartButton />
-      <ProductList />
-    </CartProvider>
-
     <Routes>
-
+      <Route index element={GithubSearch />} />
+      <route path="/Counter" element={<Counter />} />
+      <route path="/Products" element={<Products />} />
     </Routes>
-    
-    </div>
   )
 }
+
