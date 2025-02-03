@@ -1,9 +1,18 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 
 
 function ProductCard({ product }) {
+    const {setCartCount} = useContext(CartContext)
+
+    function handleCartItems(){
+        setCartCount((prev) => prev + 1)
+    }
+
+
+
     return (
+        <>
         <div className="group relative">
             <img
                 alt={product.title}
@@ -22,9 +31,11 @@ function ProductCard({ product }) {
                 </div>
                 <p className="text-sm font-medium text-gray-900">£{product.price}</p>
             </div>
-            <button>Add to cart</button>
+            
         </div>
+    <button onClick={handleCartItems}>Add to cart</button>
 
+    </>
     )
 }
 

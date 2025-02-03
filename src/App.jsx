@@ -14,6 +14,8 @@ export default function App() {
      <CartButton />
       <ProductList />
     </CartProvider>
+
+    
     </div>
   )
 }
